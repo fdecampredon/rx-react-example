@@ -1,0 +1,43 @@
+{
+  "name": "rx-react-todomvc-sample",
+  "version": "0.1.0",
+  "description": "Example of TodoMVC with rx-react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "NODE_ENV=development browserify -d src/client.js -o  assets/bundle.js"
+  },
+  "author": "François de Campredon",
+  "license": "Apache License V2",
+  "dependencies": {
+    "bluebird": "^2.3.10",
+    "browserify": "^6.2.0",
+    "connect-browserify": "^3.2.1",
+    "express": "^4.10.1",
+    "fibers": "^1.0.2",
+    "level": "^0.18.0",
+    "node-jsx": "^0.12.0",
+    "node-uuid": "^1.4.1",
+    "react": "^0.12.0",
+    "reactify": "^0.15.2",
+    "rx": "^2.3.14",
+    "rx-flux": "^0.1.0",
+    "rx-react": "0.0.1",
+    "serialize-javascript": "^1.0.0",
+    "socket.io": "^1.2.0",
+    "socket.io-client": "^1.2.0"
+  },
+  "browser": {
+    "./src/services/todoService.js": "./src/services/todoService-client.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  }
+}
